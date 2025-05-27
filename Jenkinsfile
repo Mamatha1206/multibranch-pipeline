@@ -4,13 +4,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building on dev branch"
+                echo "Building on test branch"
                 sh 'javac src/HelloWorld.java'
             }
         }
-        stage('Test') {
+        stage('Integration Test') {
             steps {
-                echo "Running tests on dev branch"
+                echo "Running integration tests"
+            }
+        }
+        stage('Deploy to Staging') {
+            steps {
+                echo "Simulating staging deployment"
             }
         }
     }

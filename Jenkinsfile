@@ -4,14 +4,28 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building on dev branch"
+                echo "Building on prod branch"
                 sh 'javac src/HelloWorld.java'
             }
         }
-        stage('Test') {
+        stage('Final Test') {
             steps {
-                echo "Running tests on dev branch"
+                echo "Running final production tests"
             }
+        }
+        stage('Deploy to Production') {
+            steps {
+                echo "Deploying to production..."
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ Deployment successful!"
+        }
+        failure {
+            echo "❌ Deployment failed!"
         }
     }
 }

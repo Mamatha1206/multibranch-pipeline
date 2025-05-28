@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building on prod branch"
-                sh 'javac src/HelloWorld.java'
             }
         }
         stage('Final Test') {
@@ -19,13 +18,6 @@ pipeline {
             }
         }
     }
-
-    post {
-        success {
-            echo "✅ Deployment successful!"
-        }
-        failure {
-            echo "❌ Deployment failed!"
-        }
-    }
 }
+
+    

@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building on test branch"
-                sh 'javac src/HelloWorld.java'
+                
             }
         }
         stage('Integration Test') {
